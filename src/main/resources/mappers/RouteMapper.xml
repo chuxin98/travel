@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.it.travel.mapper.RouteMapper">
+    <select id="getRouteList" resultType="com.it.travel.pojo.Route">
+        select rid, rname,price,routeIntroduce,rflag,rdate,isThemeTour,count,cid,rimage,sid,sourceId from tab_route
+    </select>
+    <select id="getRouteByRid" resultType="com.it.travel.pojo.Route">
+        select rid, rname,price,routeIntroduce,rflag,rdate,isThemeTour,count,cid,rimage,sid,sourceId from tab_route where rid=#{rid}
+    </select>
+    <select id="RouteSearch" resultType="com.it.travel.pojo.Route">
+        select rid, rname,price,routeIntroduce,rflag,rdate,isThemeTour,count,cid,rimage,sid,sourceId from tab_route where rname like '%' #{query} '%'
+    </select>
+
+</mapper>
